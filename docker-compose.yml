@@ -13,3 +13,8 @@ services:
       - CORSANYWHERE_RATELIMIT=${CORSANYWHERE_RATELIMIT}
     ports:
       - ${PORT}:8080
+
+networks:
+    default:
+      name:  ${AHW_DOCKER_NETWORK}
+      external: true
