@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cors_anywhere:
+    build: .
+    container_name: cors_anywhere
+    restart: ${RESTART_POLICY}
+    environment:
+      - KEY=${KEY}
+      - CERT=${CERT}
+      - CORSANYWHERE_BLACKLIST=${CORSANYWHERE_BLACKLIST}
+      - CORSANYWHERE_WHITELIST=${CORSANYWHERE_WHITELIST}
+      - CORSANYWHERE_RATELIMIT=${CORSANYWHERE_RATELIMIT}
+    ports:
+      - ${PORT}:8080
